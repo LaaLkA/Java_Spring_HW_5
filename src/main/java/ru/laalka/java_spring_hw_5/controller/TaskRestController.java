@@ -1,8 +1,6 @@
 package ru.laalka.java_spring_hw_5.controller;
 
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import ru.laalka.java_spring_hw_5.model.Task;
 import ru.laalka.java_spring_hw_5.service.TaskService;
@@ -14,7 +12,7 @@ import java.util.List;
 //@AllArgsConstructor
 @RestController
 @RequestMapping("/tasks")
-public class TaskController {
+public class TaskRestController {
 
     /**
      * Поле сервиса
@@ -28,7 +26,7 @@ public class TaskController {
      * @param service сервис
      */
     @Autowired
-    public TaskController(TaskService service) {
+    public TaskRestController(TaskService service) {
         this.service = service;
     }
 
