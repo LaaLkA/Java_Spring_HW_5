@@ -9,9 +9,17 @@ import ru.laalka.java_spring_hw_5.model.TaskStatus;
 
 import java.util.List;
 
+/**
+ * Интерфейс репозитория задач
+ */
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
 
+    /**
+     * Метод получения всех задач по статусу
+     * @param status статус задачи
+     * @return список подходящих задач
+     */
     @Query("SELECT t FROM Task t WHERE t.status = :status")
     List<Task> findByStatus(@Param("status") TaskStatus status);
 

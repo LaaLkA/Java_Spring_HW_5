@@ -5,10 +5,14 @@ import lombok.Data;
 
 import java.util.Date;
 
-@Data
+/**
+ * Сущность Задачи
+ */
+// @Data
 @Entity
 @Table(name = "tasks")
 public class Task {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,6 +31,8 @@ public class Task {
     @Column(nullable = false, updatable = false)
     private Date dateCreated = new Date();
 
+
+    // Геттеры и сеттеры (затычка, так как не работает Lombok)
     public String getTitle() {
         return title;
     }
